@@ -70,7 +70,7 @@
             </div>
           </div>
           <div class="cs_main_header_right">
-            <a href="appointment.html" class="cs_btn cs_style_1 cs_fs_18 cs_semibold cs_accent_bg  cs_radius_100"><span class="cs_btn_text">Prendre un Rendez-vous</span></a>
+            <a href="contact.html" class="cs_btn cs_style_1 cs_fs_18 cs_semibold cs_accent_bg  cs_radius_100"><span class="cs_btn_text">Prendre un Rendez-vous</span></a>
           </div>
         </div>
       </div>
@@ -92,52 +92,58 @@
   <div class="container">
     <div class="row cs_gap_y_40">
       <div class="col-lg-6">
-        <div class="contact_form_wrapper cs_heading_font cs_bg_filed cs_hide_before_after" data-src="assets/img/contact_form_bg_1.png">
-          <div class="cs_section_heading cs_style_1">
-            <h2 class="cs_section_title cs_fs_40 mb-0">Contactez-nous</h2>
-            <div class="cs_height_20 cs_height_lg_20"></div>
-            <div>Envoyez-nous un message et nous répondrons dans les plus brefs délais</div>
-          </div>
-          <div class="cs_height_45 cs_height_lg_40"></div>
-          <form class="row cs_row_gap_30 cs_gap_y_30">
-            <div class="col-sm-6">
-              <div class="cs_form_field_wrapper cs_type_1 cs_radius_5">
-                <input type="text" name="fname" class="cs_form_field cs_type_1" placeholder="Prénom*">
+             <div>
+        <div class="cs_appointment_form_wrapper cs_type_3 cs_radius_10">
+          <h3 class="cs_appointment_heading cs_white_color mb-0">Prendre un Rendez-vous</h3>
+          <div class="cs_height_20 cs_height_lg_20"></div>
+          <form class="cs_appointment_form row cs_gap_y_30">
+            <div class="col-md-6">
+              <div class="cs_form_field_wrapper cs_radius_10">
+                <input type="text" name="name" class="cs_form_field cs_fs_14" placeholder="Nom Complet">
               </div>
             </div>
-            <div class="col-sm-6">
-              <div class="cs_form_field_wrapper cs_type_1 cs_radius_5">
-                <input type="text" name="lname" class="cs_form_field cs_type_1" placeholder="Nom*">
+            <div class="col-md-6">
+              <div class="cs_form_field_wrapper cs_radius_10">
+                <input type="text" name="phone" class="cs_form_field cs_fs_14" placeholder="Numero de Téléphone">
               </div>
             </div>
-            <div class="col-sm-6">
-              <div class="cs_form_field_wrapper cs_type_1 cs_radius_5">
-                <input type="email" name="email" class="cs_form_field cs_type_1" placeholder="Adresse email*">
+            <div class="col-md-6">
+              <div class="cs_form_field_wrapper cs_radius_8">
+                <select name="department" class="cs_form_field_wrapper cs_radius_8 cs_select"
+                  data-placeholder="Select Department">
+                  <option value="ophthalmology_general">Général</option>
+                  <option value="cataract">Chirurgie de la Cataracte</option>
+                  <option value="glaucoma">Glaucome</option>
+                  <option value="retina">Rétine et DMLA</option>
+                  <option value="cornea">Cornée et Transplantation</option>
+                  <option value="pediatric_ophthalmology">Ophtalmologie Pédiatrique</option>
+                  <option value="laser_vision">Correction Laser (LASIK/PRK)</option>
+                  <option value="others">Autres</option>
+
+                </select>
               </div>
             </div>
-            <div class="col-sm-6">
-              <div class="cs_form_field_wrapper cs_type_1 cs_radius_5">
-                <input type="text" name="phone" class="cs_form_field cs_type_1" placeholder="Numéro de téléphone*">
+            <div class="col-md-6">
+              <div class="cs_form_field_wrapper cs_radius_10">
+                <input type="text" name="date" class="cs_form_field" id="datepicker" placeholder="DD MM  YY">
+                <span class="cs_input_icon position-absolute"><i class="fa-regular fa-calendar-days"></i></span>
               </div>
-            </div>        
-            <div class="col-lg-12">
-              <div class="cs_form_field_wrapper cs_type_1 cs_radius_5">
-                <input type="text" name="subject" class="cs_form_field cs_type_1" placeholder="Sujet*">
+            </div>
+            <div class="col-md-12">
+              <div class="cs_form_field_wrapper cs_radius_10">
+                <textarea name="Message" rows="6" class="cs_form_field cs_fs_14"
+                  placeholder="Ecrire Message"></textarea>
               </div>
-            </div>        
-            <div class="col-lg-12">
-              <div class="cs_form_field_wrapper cs_type_1 cs_radius_5">
-               <textarea name="message" rows="5" placeholder="Votre message ici" class="cs_form_field cs_type_1"></textarea>
-              </div>
-            </div>        
-            <div class="col-lg-12">
-              <button type="submit" class="cs_btn cs_style_1 cs_fs_18 cs_semibold cs_accent_bg  cs_radius_5 w-100">
-                <span class="cs_btn_text">Envoyer le Message</span>
-                <span class="cs_btn_text"><i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+            <div class="col-md-12">
+              <div class="cs_height_10 cs_height_lg_10"></div>
+              <button type="submit" class="cs_btn cs_style_1 cs_fs_18 cs_semibold cs_white_bg cs_radius_100">
+                <span class="cs_btn_text">Prendre un Rendez-vous</span>
               </button>
             </div>
           </form>
         </div>
+      </div>
       </div>
       <div class="col-lg-6">
         <div class="row cs_gap_y_24">
@@ -162,7 +168,7 @@
                   <div class="cs_iconbox_icon cs_center cs_radius_50 cs_accent_bg cs_white_color">
                     <i class="fa-regular fa-envelope"></i>
                   </div>
-                  <a href="mailto:infoyour@gmail.com" class="cs_iconbox_text">contact@drsadouni.ma/a>
+                  <a href="mailto:infoyour@gmail.com" class="cs_iconbox_text">contact@drsadouni.ma</a>
                   <a href="mailto:domaininfo@gmail.com" class="cs_iconbox_text">contact@drsadouni.ma</a>
                  </div>
                 </div>
