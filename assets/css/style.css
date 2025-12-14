@@ -4432,9 +4432,7 @@ a.ui-button:active,
 .cs_header_transparent .cs_header_number {
   color: white;
 }
-.cs_nav_list_mobile a{
-  color : black;
-}
+
 
 .cs_search_close {
   position: absolute;
@@ -11824,7 +11822,7 @@ Pricing controller
 
   /* 2. Centre le texte et ajuste les espacements */
   .cs_hero_content_wrapper {
-    padding: 120px 20px 60px; /* Espace pour le header et séparation basse */
+    padding: 160px 20px 60px; /* Espace pour le header et séparation basse */
     text-align: center;
   }
 
@@ -11887,6 +11885,11 @@ Pricing controller
 .cs_about.cs_style_1{
   margin-top: 900px;
 }
+
+.cs_site_header .cs_nav_list a{
+  color : black;
+}
+
 
 
 }
