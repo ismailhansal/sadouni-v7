@@ -6426,7 +6426,7 @@ a.ui-button:active,
 }
 @media (max-width: 1199px) {
   .cs_hero.cs_style_1.cs_type_1 {
-    padding-bottom: 210px;
+    padding-bottom: 210px; /*pour ajuster le padding de la hero section en haut*/
     max-height: 950px;
   }
 }
@@ -11818,6 +11818,13 @@ Pricing controller
 
     flex-direction: column;
     padding-bottom: 40px;
+  
+  }
+
+  .cs_hero .cs_counter_1_wrap{
+    display: flex;
+    flex-direction: row;
+
   }
 
   /* 2. Centre le texte et ajuste les espacements */
@@ -11868,7 +11875,7 @@ Pricing controller
 
  .cs_hero_info_box_mobile {
   position: absolute;
-  top: 90%; /* ou px : top: 400px; selon ce qui rend bien */
+  top: 95%; /* ou px : top: 400px; selon ce qui rend bien */
   left: 50%;
   transform: translateX(-50%);
   width: 90%; 
