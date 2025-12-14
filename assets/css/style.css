@@ -11817,7 +11817,7 @@ Pricing controller
     object-fit: cover;  /* garde le ratio et couvre la section */
 
     flex-direction: column;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
   
   }
 
@@ -11829,7 +11829,7 @@ Pricing controller
 
   /* 2. Centre le texte et ajuste les espacements */
   .cs_hero_content_wrapper {
-    padding: 160px 20px 60px; /* Espace pour le header et séparation basse */
+    padding: 125px 20px 60px; /* Espace pour le header et séparation basse */ /*Important haut de page !!!!!!!!!!!!!!!!!!!!!!!!!*/
     text-align: center;
   }
 
