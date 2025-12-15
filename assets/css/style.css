@@ -11912,3 +11912,129 @@ Pricing controller
 
 }
 
+
+
+
+
+/*nos specialites*/
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f2f2f2;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Section */
+.specialites {
+  padding: 40px 20px;
+}
+
+/* GRID */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Desktop : 3 colonnes */
+  gap: 90px;
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: 110px;
+}
+
+/* CARD */
+.property-card {
+  background: #fafafc;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 15px 15px 27px #e1e1e3,
+              -15px -15px 27px #ffffff;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+}
+
+/* IMAGE */
+.property-image {
+  height: 180px;
+background-image: url("../img/cataracte.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.property-image2 {
+  height: 180px;
+background-image: url("../img/glaucome.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.property-image3 {
+  height: 180px;
+background-image: url("../img/dry-eye.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+.property-image4 {
+  height: 180px;
+background-image: url("../img/lasik.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+.property-image5 {
+  height: 180px;
+background-image: url("../img/contact-lens.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+.property-image6 {
+  height: 180px;
+background-image: url("../img/myopia.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+
+
+/* CONTENT */
+.property-description {
+  padding: 20px;
+  text-align: center;
+}
+
+.property-description h5 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.property-description p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: 1fr; /* 1 carte par ligne */
+  }
+
+  /* afficher seulement 4 cartes */
+  .property-card:nth-child(n+5) {
+    display: none;
+  }
+}
