@@ -4208,12 +4208,46 @@ a.ui-button:active,
 /*--------------------------------------------------------------
 7. Header
 ----------------------------------------------------------------*/
+/* Mobile Navbar Text Colors */
+@media screen and (max-width: 1199px) {
+  /* Home page (transparent header) - white background, black text */
+  .cs_site_header.cs_header_transparent .cs_nav .cs_nav_list > li > a,
+  .cs_site_header.cs_header_transparent .cs_header_number {
+    color: #000 !important;
+  }
+  
+  .cs_site_header.cs_header_transparent .cs_munu_dropdown_toggle:before,
+  .cs_site_header.cs_header_transparent .cs_munu_dropdown_toggle:after {
+    background-color: #000 !important;
+  }
+  
+  /* Other pages (colored header) - black background, white text */
+  .cs_site_header:not(.cs_header_transparent) .cs_nav .cs_nav_list > li > a,
+  .cs_site_header:not(.cs_header_transparent) .cs_header_number {
+    color: #fff !important;
+  }
+  
+  .cs_site_header:not(.cs_header_transparent) .cs_munu_dropdown_toggle:before,
+  .cs_site_header:not(.cs_header_transparent) .cs_munu_dropdown_toggle:after {
+    background-color: #fff !important;
+  }
+  
+  /* When scrolled - apply to both header types */
+  .cs_site_header.cs_scrolled .cs_nav .cs_nav_list > li > a,
+  .cs_site_header.cs_scrolled .cs_header_number {
+    color: #000 !important;
+  }
+  
+  .cs_site_header.cs_scrolled .cs_munu_dropdown_toggle:before,
+  .cs_site_header.cs_scrolled .cs_munu_dropdown_toggle:after {
+    background-color: #000 !important;
+  }
+}
+
 .cs_site_header {
-  position: absolute;
-  z-index: 101;
+  position: relative;
+  z-index: 99;
   width: 100%;
-  left: 0;
-  top: 0px;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
@@ -4881,6 +4915,12 @@ a.ui-button:active,
     top: -1px;
     border-radius: 0px 0px 2px 0px;
   }
+
+
+
+
+
+
   .cs_nav .cs_nav_list li:not(.cs_mega_menu) {
     position: relative;
   }
@@ -5210,6 +5250,9 @@ a.ui-button:active,
   }
   .cs_site_header .current-menu-item > a:before {
     display: none;
+  }
+  .cs_color_items{
+    color : black
   }
   .cs_site_header.cs_style_1 .cs_main_header_center .cs_site_branding {
     position: absolute;
