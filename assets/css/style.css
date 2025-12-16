@@ -7498,6 +7498,7 @@ a.ui-button:active,
   display: -ms-flexbox;
   display: flex;
   gap: 30px;
+  
 }
 .cs_iconbox.cs_style_3.cs_type_1 .cs_iconbox_icon {
   border: 1px solid var(--accent-color);
@@ -11865,7 +11866,7 @@ Pricing controller
   /* 1. La section Hero s'adapte à son contenu (plus de hauteur fixe) */
   .cs_hero {
     height: 100%; 
-    max-height: 50vh;   /* optionnel, sécurité */
+    max-height: 100vh;   /* optionnel, sécurité */
       /* s'adapte à la hauteur de la section hero (50vh) */
     display: flex;
     width: 100%;
@@ -11884,7 +11885,7 @@ Pricing controller
 
   /* 2. Centre le texte et ajuste les espacements */
   .cs_hero_content_wrapper {
-    padding: 125px 20px 60px; /* Espace pour le header et séparation basse */ /*Important haut de page !!!!!!!!!!!!!!!!!!!!!!!!!*/
+    padding: 200px 20px 60px; /* Espace pour le header et séparation basse */ /*Important haut de page !!!!!!!!!!!!!!!!!!!!!!!!!*/
     text-align: center;
   }
 
@@ -11914,7 +11915,6 @@ Pricing controller
     background: white; /* Fond blanc pour détacher de la vidéo */
     padding: 25px;
     border-radius: 20px;
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
     text-align: center;
   }
 
@@ -12094,3 +12094,6 @@ background-image: url("../img/myopia.jpg");
     display: none;
   }
 }
+
+
+
