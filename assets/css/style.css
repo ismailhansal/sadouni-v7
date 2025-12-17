@@ -9208,6 +9208,7 @@ a.ui-button:active,
   display: -ms-flexbox;
   display: flex;
   color: white;
+  font-weight: 400;
 }
 
 .cs_counter.cs_style_2 {
@@ -11957,6 +11958,7 @@ Pricing controller
 
     flex-direction: column;
     padding-bottom: 20px;
+
   
   }
 
@@ -12027,6 +12029,9 @@ Pricing controller
   z-index: 4;
   
 }
+
+
+
 
 .cs_about.cs_style_1{
   margin-top: 970px;

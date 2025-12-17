@@ -135,7 +135,7 @@
       
         <div class="cs_hero_conten wow fadeInRight" data-wow-duration="0.9s" data-wow-delay="0.25s">
           <h3 class="cs_hero_title_mini cs_fs_20 cs_accent_color cs_semibold">Dr. Choaib Sadouni</h3>
-          <h1 class="cs_hero_title cs_fs_48">Spécialiste en chirurgie de la Cataracte</h1>
+          <h1 style="font-weight: 450;" class="cs_hero_title cs_fs_48">Spécialiste en chirurgie de la Cataracte</h1>
 <p class="cs_hero_subtitle cs_fs_20 cs_medium cs_heading_color">
 Dr Choaib Sadouni vous accompagne avec expertise dans la chirurgie de la cataracte.
 </p>
@@ -969,6 +969,21 @@ Le Dr Choaib Sadouni propose des soins ophtalmologiques personnalisés, alliant 
         });
       });
     });
+
+const submenuLinks = document.querySelectorAll('.cs_nav_list .sub-menu a');
+const menuToggle = document.querySelector('.cs_menu_toggle');
+
+if (menuToggle) {
+  menuToggle.addEventListener('click', () => {
+    // Quand le menu s'ouvre, forcer la couleur noire sur les sous-menus
+    submenuLinks.forEach(link => {
+      link.style.color = '#000';
+    });
+  });
+}
+
+
+
   </script>
 </body>
 
