@@ -3473,8 +3473,8 @@ a.ui-button:active,
   left: 0;
   top: 0;
   opacity: 0.95;
-  background: -webkit-gradient(linear, right top, left top, color-stop(25%, transparent), color-stop(55.11%, var(--accent-color)));
-  background: linear-gradient(-90deg, transparent 25%, var(--accent-color) 55.11%);
+  background: -webkit-gradient(linear, right top, left top, color-stop(25%, transparent), color-stop(90.11%, var(--gray-color)));
+  background: linear-gradient(-90deg, transparent 75%, var(--gray-color) 99.11%);
 }
 .cs_page_heading .cs_page_heading_in {
   position: relative;
@@ -5949,6 +5949,14 @@ a.ui-button:active,
 
 .cs_about.cs_style_1 {
   margin-top: 300px; 
+  position: relative; 
+}
+
+
+
+
+.cs_about.cs_style_1.cs_wesh{
+     margin-top: 150px; 
   position: relative; 
 }
 
