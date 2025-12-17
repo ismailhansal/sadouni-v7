@@ -31,6 +31,7 @@
 :root {
   --white-color: #fff;
   --heading-color: #00001b;
+  --gold-color : #cc9d02;
   --body-color: rgba(0, 0, 27, 0.6);
   --accent-color: #132573;
   --gray-color: #ebeced;
@@ -57,6 +58,7 @@
   --heading-font: "Marcellus", serif;
   --body-font: "Marcellus", serif;
 }
+
 
 /*--------------------------------------------------------------
   ** Google Fonts Integration
@@ -1836,7 +1838,7 @@ label {
 .cs_player_btn.cs_style_1 .cs_player_btn_icon {
   width: 50px;
   height: 50px;
-  border: 1px solid var(--gray-color);
+  border: 1px solid var(---color);
   border-radius: 50%;
   color: var(--gray-color);
 }
@@ -4208,39 +4210,63 @@ a.ui-button:active,
 /*--------------------------------------------------------------
 7. Header
 ----------------------------------------------------------------*/
-/* Mobile Navbar Text Colors */
+/* Header Styles */
+/* Initial state (top of page) */
+.cs_site_header.cs_header_transparent .cs_nav .cs_nav_list > li > a,
+.cs_site_header.cs_header_transparent .cs_header_number {
+  color: #fff !important;
+  transition: color 0.3s ease;
+}
+
+/* Submenu items in hero section */
+.cs_site_header.cs_header_transparent .cs_nav .sub-menu a {
+  color: #000 !important;
+}
+
+/* Logo switching */
+.cs_site_header.cs_header_transparent .cs_logo_white {
+  display: block;
+}
+.cs_site_header.cs_header_transparent .cs_logo_dark {
+  display: none;
+}
+
+/* Scrolled state */
+.cs_site_header.cs_scrolled .cs_nav .cs_nav_list > li > a,
+.cs_site_header.cs_scrolled .cs_header_number {
+  color: #000 !important;
+}
+
+.cs_site_header.cs_scrolled .cs_logo_white {
+  display: none;
+}
+.cs_site_header.cs_scrolled .cs_logo_dark {
+  display: block;
+}
+
+/* Mobile styles */
 @media screen and (max-width: 1199px) {
-  /* Home page (transparent header) - white background, black text */
-  .cs_site_header.cs_header_transparent .cs_nav .cs_nav_list > li > a,
-  .cs_site_header.cs_header_transparent .cs_header_number {
+  .cs_site_header .cs_nav .cs_nav_list > li > a,
+  .cs_site_header .cs_header_number {
     color: #000 !important;
   }
   
-  .cs_site_header.cs_header_transparent .cs_munu_dropdown_toggle:before,
-  .cs_site_header.cs_header_transparent .cs_munu_dropdown_toggle:after {
+  .cs_site_header .cs_munu_dropdown_toggle:before,
+  .cs_site_header .cs_munu_dropdown_toggle:after {
     background-color: #000 !important;
   }
   
-  /* Other pages (colored header) - black background, white text */
-  .cs_site_header:not(.cs_header_transparent) .cs_nav .cs_nav_list > li > a,
-  .cs_site_header:not(.cs_header_transparent) .cs_header_number {
-    color: #fff !important;
+  /* Ensure mobile menu has proper contrast */
+  .cs_site_header .cs_nav .cs_nav_list {
+    background-color: #fff;
   }
   
-  .cs_site_header:not(.cs_header_transparent) .cs_munu_dropdown_toggle:before,
-  .cs_site_header:not(.cs_header_transparent) .cs_munu_dropdown_toggle:after {
-    background-color: #fff !important;
+  /* Logo in mobile menu */
+  .cs_site_header .cs_logo_white {
+    display: none !important;
   }
-  
-  /* When scrolled - apply to both header types */
-  .cs_site_header.cs_scrolled .cs_nav .cs_nav_list > li > a,
-  .cs_site_header.cs_scrolled .cs_header_number {
-    color: #000 !important;
-  }
-  
-  .cs_site_header.cs_scrolled .cs_munu_dropdown_toggle:before,
-  .cs_site_header.cs_scrolled .cs_munu_dropdown_toggle:after {
-    background-color: #000 !important;
+  .cs_site_header .cs_logo_dark {
+    display: block !important;
   }
 }
 
@@ -4895,10 +4921,12 @@ a.ui-button:active,
     top: 100%;
     opacity: 1;
     visibility: visible;
-    pointer-events: auto;
+    pointer-events: auto !important;
   }
   .cs_nav .cs_nav_list > li.menu-item-has-children > a {
     position: relative;
+      z-index: 10;
+
   }
   .cs_nav .cs_nav_list > li.menu-item-has-children > a::after {
     content: "";
@@ -9164,7 +9192,7 @@ a.ui-button:active,
   content: "";
   width: 1px;
   height: 100%;
-  background-color: var(--accent-color);
+  background-color: var(--heading-color);
   position: absolute;
   top: 0;
   right: -40px;
@@ -12145,10 +12173,20 @@ background-image: url("../img/myopia.jpg");
     grid-template-columns: 1fr; /* 1 carte par ligne */
   }
 
+   .cataracte-img {
+    height: 900px;
+    object-fit: cover;
+  }
+
   /* afficher seulement 4 cartes */
   .property-card:nth-child(n+5) {
     display: none;
   }
+}
+
+.gold_color{
+    color: var(--gold-color) !important ;
+
 }
 
 
