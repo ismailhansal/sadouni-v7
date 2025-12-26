@@ -6498,7 +6498,7 @@ a.ui-button:active,
   padding: 0px 0 0;
 
 }
-@media (max-width: 991px) {
+@media (max-width: 1440px) {
   .cs_hero.cs_style_1 {
     max-height: 800px;
   }
@@ -6514,7 +6514,7 @@ a.ui-button:active,
   background: -webkit-gradient(linear, left top, right top, color-stop(75%, var(--white-color)), to(rgba(255, 255, 255, 0)));
   background: linear-gradient(90deg, var(--white-color) 75%, rgba(255, 255, 255, 0) 100%);
 }
-@media (max-width: 991px) {
+@media (max-width: 1440px) {
   .cs_hero.cs_style_1.cs_type_1 {
     height: initial;
     max-height: initial;
@@ -6585,7 +6585,7 @@ a.ui-button:active,
 .cs_hero.cs_style_1.cs_type_3 .cs_hero_content {
   max-width: 900px;
 }
-@media (max-width: 991px) {
+@media (max-width: 1440px) {
   .cs_hero.cs_style_1.cs_type_3 .cs_hero_content {
     max-width: 630px;
   }
@@ -6664,7 +6664,7 @@ a.ui-button:active,
     gap: 30px;
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 1440px) {
   .cs_hero.cs_style_1.cs_type_3 .cs_hero_btn_group.cs_type_1 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -6685,7 +6685,7 @@ a.ui-button:active,
     height: 750px;
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 1440px) {
   .cs_hero.cs_style_1.cs_type_4 {
     height: initial;
     max-height: initial;
@@ -6729,7 +6729,7 @@ a.ui-button:active,
     width: 36%;
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 1440px) {
   .cs_hero.cs_style_1.cs_type_4 .cs_hero_thumbnail {
     position: relative;
     left: initial;
@@ -6804,7 +6804,7 @@ a.ui-button:active,
     margin-bottom: 40px;
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 1440px) {
   .cs_hero.cs_style_1.cs_type_4 .cs_hero_title {
     margin-bottom: 30px;
   }
@@ -6822,7 +6822,7 @@ a.ui-button:active,
 .cs_hero.cs_style_1.cs_type_5 {
   min-height: 820px;
 }
-@media (max-width: 991px) {
+@media (max-width: 1440px) {
   .cs_hero.cs_style_1.cs_type_5 {
     height: initial;
     min-height: initial;
@@ -6872,7 +6872,7 @@ a.ui-button:active,
 
 
 
-@media (max-width: 991px) {
+@media (max-width: 1440px) {
   .cs_hero.cs_style_1 .cs_hero_content {
     max-width: 470px;
   }
@@ -7159,7 +7159,7 @@ a.ui-button:active,
   right: 0;
   top: 0;
 }
-@media (max-width: 991px) {
+@media (max-width: 1440px) {
   .cs_hero.cs_style_1 .cs_hero_thumbnail {
     position: initial;
     max-width: 100%;
@@ -7303,7 +7303,7 @@ a.ui-button:active,
     max-width: 420px;
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 1440px) {
   .cs_hero.cs_style_1 .cs_slider.cs_style_1 {
     position: relative;
     bottom: initial;
@@ -7410,7 +7410,7 @@ a.ui-button:active,
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-@media (max-width: 991px) {
+@media (max-width: 1440px) {
   .cs_iconbox.cs_style_1.cs_accent_border {
     width: 100%;
   }
