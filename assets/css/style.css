@@ -12206,4 +12206,9 @@ background-image: url("../img/myopia.jpg");
 }
 
 
+@media (min-width: 2200px) {
 
+  .cs_btn_xxl{
+  
+  }
+}
