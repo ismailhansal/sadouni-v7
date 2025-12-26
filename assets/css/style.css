@@ -12189,8 +12189,9 @@ background-image: url("../img/myopia.jpg");
   }
 
    .cataracte-img {
-    height: 900px;
+    height: 170px;
     object-fit: cover;
+    margin-bottom: 80px;
   }
 
   /* afficher seulement 4 cartes */
