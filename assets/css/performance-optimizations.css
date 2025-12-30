@@ -1,0 +1,68 @@
+/* Performance Optimizations for Mobile */
+.mobile-device {
+  /* Optimize for mobile */
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Optimize scroll performance */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optimize images and media */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Optimize fixed/absolute positioned elements */
+.cs_site_header {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Optimize animations */
+* {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Optimize scroll performance for mobile */
+@media (max-width: 767px) {
+  /* Disable hover effects on mobile */
+  *:hover {
+    transform: none !important;
+  }
+  
+  /* Optimize fixed elements */
+  .cs_site_header {
+    position: fixed !important;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  /* Add padding to body to account for fixed header */
+  body {
+    padding-top: 80px;
+  }
+  
+  /* Optimize animations on mobile */
+  [class*="cs_animate_"] {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}

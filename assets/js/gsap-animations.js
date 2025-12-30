@@ -7,18 +7,34 @@
 (function() {
     'use strict';
 
-    // Check for reduced motion preference
+    // Check for reduced motion preference and mobile device
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
     // Only initialize if GSAP is available and user prefers motion
     if (typeof gsap === 'undefined' || prefersReducedMotion) {
         console.log('GSAP animations disabled - library not available or reduced motion preferred');
         return;
     }
+    
+    // Performance optimization for mobile
+    if (isMobile) {
+        // Disable some heavy animations on mobile
+        document.documentElement.classList.add('mobile-device');
+    }
 
-    // Register ScrollTrigger plugin
+    // Register ScrollTrigger plugin with mobile optimizations
     if (typeof ScrollTrigger !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
+        
+        // Optimize ScrollTrigger for mobile
+        ScrollTrigger.normalizeScroll({
+            allowNestedScroll: true,
+            ignoreMobileResize: true
+        });
+        
+        // Reduce refresh events on mobile
+        ScrollTrigger.config({ autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load' });
     }
 
     // Initialize all animations when DOM is ready
@@ -48,14 +64,29 @@
         const heroSection = document.querySelector('.cs_hero');
         if (!heroSection) return;
 
-        // Subtle parallax layers for medical precision feel
+        // Skip on mobile for better performance
+        if (isMobile) {
+            // Only apply a simple fade-in on mobile
+            gsap.from(heroSection, {
+                opacity: 0.8,
+                y: 20,
+                duration: 1,
+                ease: "power2.out"
+            });
+            return;
+        }
+
+        // Reduced number of parallax elements on mobile
         const parallaxElements = [
-            { element: '.cs_hero_content_wrapper', speed: 0.3 },
-            { element: '.cs_hero_info_box', speed: 0.2 },
-            { element: '.cs_hero_shape_2', speed: 0.15 }
+            { element: '.cs_hero_content_wrapper', speed: 0.3, mobile: true },
+            { element: '.cs_hero_info_box', speed: 0.2, mobile: false },
+            { element: '.cs_hero_shape_2', speed: 0.15, mobile: false }
         ];
 
         parallaxElements.forEach(layer => {
+            // Skip non-essential elements on mobile
+            if (isMobile && !layer.mobile) return;
+            
             const element = document.querySelector(layer.element);
             if (element) {
                 gsap.to(element, {
@@ -65,8 +96,15 @@
                         trigger: heroSection,
                         start: "top top",
                         end: "bottom top",
-                        scrub: 2.5,
-                        invalidateOnRefresh: true
+                        scrub: isMobile ? 3.5 : 2.5, // Smoother scrub on mobile
+                        invalidateOnRefresh: true,
+                        // Optimize performance
+                        onUpdate: self => {
+                            if (isMobile) {
+                                // Skip some updates on mobile for better performance
+                                if (Math.random() > 0.7) self.update();
+                            }
+                        }
                     }
                 });
             }
@@ -124,23 +162,52 @@
      * Elements react gently to scroll speed
      * Applied to specialty cards with medical precision
      */
+    // Throttle function to limit how often a function can run
+    function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        };
+    }
+
     function scrollVelocityParallax() {
+        // Skip on mobile for better performance
+        if (isMobile) return;
+        
         let lastScrollY = window.scrollY;
         let scrollVelocity = 0;
-
-        // Track scroll velocity with smoothing
+        let ticking = false;
         let velocityHistory = [];
-        window.addEventListener('scroll', () => {
+        
+        // Throttled scroll handler
+        const updateVelocity = () => {
             const currentScrollY = window.scrollY;
             const instantVelocity = Math.abs(currentScrollY - lastScrollY);
             
-            // Smooth velocity calculation
             velocityHistory.push(instantVelocity);
             if (velocityHistory.length > 5) velocityHistory.shift();
             scrollVelocity = velocityHistory.reduce((a, b) => a + b, 0) / velocityHistory.length;
             
             lastScrollY = currentScrollY;
-        });
+            ticking = false;
+        };
+        
+        // Use requestAnimationFrame for better performance
+        const handleScroll = () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateVelocity);
+                ticking = true;
+            }
+        };
+        
+        // Throttle the scroll event
+        window.addEventListener('scroll', throttle(handleScroll, 50), { passive: true });
 
         // Apply very subtle velocity-based motion to cards
         const velocityElements = document.querySelectorAll('.property-card');
