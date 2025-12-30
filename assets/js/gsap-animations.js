@@ -33,8 +33,34 @@
             ignoreMobileResize: true
         });
         
-        // Reduce refresh events on mobile
-        ScrollTrigger.config({ autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load' });
+        // Optimize for mobile
+        if (isMobile) {
+            // Disable all scroll-based animations on mobile
+            ScrollTrigger.saveStyles('.cs_animate_on_scroll');
+            ScrollTrigger.matchMedia({
+                // Mobile devices
+                '(max-width: 767px)': function() {
+                    // Disable all scroll triggers on mobile
+                    ScrollTrigger.getAll().forEach(t => t.disable());
+                    return function() {}; // cleanup
+                },
+                // Desktop devices
+                '(min-width: 768px)': function() {
+                    // Re-enable all scroll triggers on desktop
+                    ScrollTrigger.getAll().forEach(t => t.enable());
+                    return function() {}; // cleanup
+                }
+            });
+        }
+        
+        // Reduce refresh events
+        ScrollTrigger.config({ 
+            autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load',
+            // Optimize performance
+            ignoreMobileResize: true,
+            syncCallbacks: true,
+            force3D: false
+        });
     }
 
     // Initialize all animations when DOM is ready
@@ -44,15 +70,52 @@
 
     function initPremiumAnimations() {
         try {
-            multiLayerParallax();
+            // Only run heavy animations on desktop
+            if (!isMobile) {
+                multiLayerParallax();
+                scrollVelocityParallax();
+                pinnedSectionMicroMovements();
+                subtlePerspectiveDepth();
+                magneticHoverEffect();
+            }
+            
+            // Only run essential animations on mobile
             imageFocusTransition();
-            scrollVelocityParallax();
-            pinnedSectionMicroMovements();
-            subtlePerspectiveDepth();
-            magneticHoverEffect();
+            
+            // Optimize touch events for mobile
+            if (isMobile) {
+                optimizeTouchEvents();
+            }
         } catch (error) {
             console.error('Error initializing GSAP animations:', error);
         }
+    }
+    
+    // Optimize touch events for mobile
+    function optimizeTouchEvents() {
+        // Prevent double-tap zoom
+        document.addEventListener('touchstart', function(event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+        
+        // Prevent scroll jank on touch devices
+        let touchStartY = 0;
+        document.addEventListener('touchstart', function(event) {
+            touchStartY = event.touches[0].clientY;
+        }, { passive: true });
+        
+        document.addEventListener('touchmove', function(event) {
+            // Prevent scrolling if the user is trying to scroll up at the top of the page
+            // or down at the bottom of the page
+            if (event.touches[0].clientY < touchStartY && window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
+                event.preventDefault();
+            }
+            if (event.touches[0].clientY > touchStartY && window.scrollY <= 0) {
+                event.preventDefault();
+            }
+        }, { passive: false });
     }
 
     /**
