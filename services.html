@@ -73,13 +73,14 @@
   </div>
   <!-- End Preloader -->
   <!-- Start Header Section -->
-  <header class="cs_site_header cs_style_1 cs_type_3 cs_sticky_header cs_heading_font">
+<header class="cs_site_header cs_style_1 cs_sticky_header cs_heading_color cs_heading_font cs_header_transparent">
     <div class="cs_main_header">
       <div class="container-fluid">
         <div class="cs_main_header_in">
           <div class="cs_main_header_left">
             <a class="cs_site_branding" href="index.html">
-              <img style=" width: 170px; height:auto; " src="assets/img/sadouni-logo-dark.svg" alt="Logo">
+              <img class="cs_logo_white" style="width: 170px; height: auto;" src="assets/img/sadouni-logo-dark.svg" alt="Logo">
+              <img class="cs_logo_dark" style="width: 170px; height: auto; display: block;" src="assets/img/sadouni-logo.svg" alt="Logo">
             </a>
           </div>
           <div class="cs_main_header_center">
@@ -90,9 +91,11 @@
                     <a href="index.html">Accueil</a>
                   </li>
                   <li class="menu-item">
-                    <a href="doctor-details.html">Dr. Choaib Sadouni</a>
+                    <a  href="doctor-details.html">Dr. Choaib Sadouni</a> 
                   </li>
                   <li><a href="about.html">Notre Cabinet</a></li>
+                  
+                 
 <li class="menu-item menu-item-has-children">
   <a href="services.html">Nos Spécialités</a>
   <ul class="sub-menu">
@@ -102,32 +105,22 @@
     <li><a href="service-consultation.html">Consultation ophtalmologique</a></li>
   </ul>
 </li>
-            <li class="menu-item"><a href="blog.html">Blog</a></li>
+                  <li class="menu-item">
+                    <a href="blog.html">Blog</a>
+                   
+                  </li>
                   <li><a href="contact.html">Contact</a></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="cs_main_header_right">
-            <a href="contact.html" class="cs_btn cs_style_1 cs_fs_18 cs_semibold cs_accent_bg  cs_radius_100"><span class="cs_btn_text">Prendre un Rendez-vous</span></a>
+            <a href="tel:+212 621-5896" class="cs_header_number cs_accent_color cs_fs_24 cs_bold">+212 662-101054</a>
           </div>
         </div>
       </div>
     </div>
   </header>
-  <div class="cs_modal_search cs_center">
-    <div class="cs_search_overlay cs_header_overlay"></div>
-    <form action="#" class="cs_modal_search_form">
-      <button class="cs_search_close" type="button">
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M26.4233 14.7567L21.18 20L26.4233 25.2433C26.7483 25.5683 26.7483 26.0967 26.4233 26.4217C26.26 26.585 26.0467 26.665 25.8333 26.665C25.62 26.665 25.4067 26.5833 25.2433 26.4217L20 21.1783L14.7567 26.4217C14.5933 26.585 14.38 26.665 14.1667 26.665C13.9533 26.665 13.74 26.5833 13.5767 26.4217C13.2517 26.0967 13.2517 25.5683 13.5767 25.2433L18.82 20L13.5767 14.7567C13.2517 14.4317 13.2517 13.9033 13.5767 13.5783C13.9017 13.2533 14.43 13.2533 14.755 13.5783L19.9983 18.8217L25.2417 13.5783C25.5667 13.2533 26.095 13.2533 26.42 13.5783C26.745 13.9033 26.745 14.4317 26.42 14.7567H26.4233ZM40 20C40 31.0283 31.0283 40 20 40C8.97167 40 0 31.0283 0 20C0 8.97167 8.97167 0 20 0C31.0283 0 40 8.97167 40 20ZM38.3333 20C38.3333 9.89167 30.1083 1.66667 20 1.66667C9.89167 1.66667 1.66667 9.89167 1.66667 20C1.66667 30.1083 9.89167 38.3333 20 38.3333C30.1083 38.3333 38.3333 30.1083 38.3333 20Z"
-            fill="currentColor" />
-        </svg>
-      </button>
-      <input type="text" placeholder="Tapez pour rechercher..." class="cs_fs_32 cs_modal_search_input">
-    </form>
-  </div>
   <!-- End Header Section -->
   <!-- Start Page Header -->
   <section class="cs_page_heading cs_center cs_bg_filed" data-src="assets/img/page_heading_bg_2.png">
@@ -503,6 +496,107 @@ Casablanca • Maroc
   <script src="assets/js/select2.min.js"></script>
   <script src="assets/js/ripples.min.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <script>
+    // Navbar behavior on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const header = document.querySelector('.cs_site_header');
+      const navLinks = document.querySelectorAll('.cs_nav_list > li > a, .cs_header_number');
+      const submenuLinks = document.querySelectorAll('.cs_nav_list .sub-menu a');
+      const logoWhite = document.querySelector('.cs_logo_white');
+      const logoDark = document.querySelector('.cs_logo_dark');
+      
+      // Function to update navbar style
+      function updateNavbar() {
+                const isDesktop = window.innerWidth > 1199; // desktop si écran > 1199px
+
+                if (!isDesktop) return; // si pas desktop, ne fait rien sur mobile        if (window.scrollY > 50 ) {
+
+                  if (window.scrollY > 50) {
+          // When scrolled
+          header.classList.add('cs_scrolled');
+          header.style.backgroundColor = '#fff';
+          header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+          
+          // Change main nav text color to black
+          navLinks.forEach(link => {
+            link.style.color = '#000';
+          });
+          
+          // Ensure submenu items are visible
+          submenuLinks.forEach(link => {
+            link.style.color = '#000';
+          });
+          
+          // Switch to dark logo
+          if (logoWhite && logoDark) {
+            logoWhite.style.display = 'none';
+            logoDark.style.display = 'block';
+          }
+        } else {
+          // When at top
+          header.classList.remove('cs_scrolled');
+          header.style.backgroundColor = 'transparent';
+          header.style.boxShadow = 'none';
+          
+          // Change main nav text color to white
+          navLinks.forEach(link => {
+            link.style.color = '#fff';
+          });
+          
+          // Submenu items should remain black for visibility
+          submenuLinks.forEach(link => {
+            link.style.color = '#000';
+          });
+          
+          // Switch to white logo
+          if (logoWhite && logoDark) {
+            logoWhite.style.display = 'block';
+            logoDark.style.display = 'none';
+          }
+        }
+      }
+      
+      // Run on load
+      updateNavbar();
+      
+      // Run on scroll
+      window.addEventListener('scroll', updateNavbar);
+      
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 100,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+
+const navLinks = document.querySelectorAll('.cs_nav_list > li > a, .cs_header_number');
+  const submenuLinks = document.querySelectorAll('.cs_nav_list .sub-menu a');
+  const menuToggle = document.querySelector('.cs_menu_toggle');
+  const header = document.querySelector('.cs_site_header');
+
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      // Toggle une classe pour savoir si le menu est ouvert
+      header.classList.toggle('menu-open');
+
+      // Tous les liens principaux et sous-menus deviennent noirs
+      navLinks.forEach(link => link.style.color = '#000');
+      submenuLinks.forEach(link => link.style.color = '#000');
+    });
+  }
+
+
+
+  </script>
 </body>
 
 
