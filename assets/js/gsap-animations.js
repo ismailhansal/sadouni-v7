@@ -7,56 +7,23 @@
 (function() {
     'use strict';
 
-    // Check for reduced motion preference and mobile device
+    // Détection du mobile et de la préférence de réduction de mouvement
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
-    // Only initialize if GSAP is available and user prefers motion
-    if (typeof gsap === 'undefined' || prefersReducedMotion) {
-        console.log('GSAP animations disabled - library not available or reduced motion preferred');
+    // Désactive complètement GSAP sur mobile
+    if (isMobile || typeof gsap === 'undefined' || prefersReducedMotion) {
+        console.log('Animations désactivées - Mobile ou réduction de mouvement activée');
         return;
     }
-    
-    // Performance optimization for mobile
-    if (isMobile) {
-        // Disable some heavy animations on mobile
-        document.documentElement.classList.add('mobile-device');
-    }
 
-    // Register ScrollTrigger plugin with mobile optimizations
+    // Enregistre le plugin ScrollTrigger avec optimisations
     if (typeof ScrollTrigger !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
         
-        // Optimize ScrollTrigger for mobile
-        ScrollTrigger.normalizeScroll({
-            allowNestedScroll: true,
-            ignoreMobileResize: true
-        });
-        
-        // Optimize for mobile
-        if (isMobile) {
-            // Disable all scroll-based animations on mobile
-            ScrollTrigger.saveStyles('.cs_animate_on_scroll');
-            ScrollTrigger.matchMedia({
-                // Mobile devices
-                '(max-width: 767px)': function() {
-                    // Disable all scroll triggers on mobile
-                    ScrollTrigger.getAll().forEach(t => t.disable());
-                    return function() {}; // cleanup
-                },
-                // Desktop devices
-                '(min-width: 768px)': function() {
-                    // Re-enable all scroll triggers on desktop
-                    ScrollTrigger.getAll().forEach(t => t.enable());
-                    return function() {}; // cleanup
-                }
-            });
-        }
-        
-        // Reduce refresh events
+        // Configuration minimale pour le bureau
         ScrollTrigger.config({ 
-            autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load',
-            // Optimize performance
+            autoRefreshEvents: 'DOMContentLoaded,load',
             ignoreMobileResize: true,
             syncCallbacks: true,
             force3D: false
