@@ -289,7 +289,7 @@ textarea {
   z-index: 99999;
   left: 0;
   top: 0;
-  background-color: #fff;
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -307,7 +307,7 @@ textarea {
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: var(--accent-color);
+  background-color: var(--white-color);
   opacity: 0.2;
 }
 .cs_preloader .cs_preloader_in {
@@ -319,7 +319,7 @@ textarea {
   height: 110px;
 }
 .cs_preloader .cs_wave_first svg {
-  fill: var(--accent-color);
+  fill: var(--gold-color);
   opacity: 0.2;
 }
 .cs_preloader .cs_wave_second {
@@ -332,7 +332,7 @@ textarea {
           animation: spark 1.25s linear infinite;
 }
 .cs_preloader .cs_wave_second svg {
-  fill: var(--accent-color);
+  fill: var(--gold-color);
 }
 
 @-webkit-keyframes spark {
