@@ -156,13 +156,13 @@
               <div class="cs_form_field_wrapper cs_radius_8">
                 <select name="department" class="cs_form_field_wrapper cs_radius_8 cs_select"
                   data-placeholder="Select Department">
-                  <option value="ophthalmology_general">Général</option>
-                  <option value="cataract">Chirurgie de la Cataracte</option>
+                  <option value="ophthalmologie générale">Général</option>
+                  <option value="Chirurgie de la cataracte">Chirurgie de la Cataracte</option>
                   <option value="glaucoma">Glaucome</option>
-                  <option value="retina">Rétine et DMLA</option>
-                  <option value="cornea">Cornée et Transplantation</option>
-                  <option value="pediatric_ophthalmology">Ophtalmologie Pédiatrique</option>
-                  <option value="laser_vision">Correction Laser (LASIK/PRK)</option>
+                  <option value="retine">Rétine et DMLA</option>
+                  <option value="cornée">Cornée et Transplantation</option>
+                  <option value="ophthalmologie pédiatrique">Ophtalmologie Pédiatrique</option>
+                  <option value="Correction Laser">Correction Laser (LASIK/PRK)</option>
                   <option value="others">Autres</option>
 
                 </select>
@@ -182,9 +182,37 @@
             </div>
             <div class="col-md-12">
               <div class="cs_height_10 cs_height_lg_10"></div>
-              <button type="submit" class="cs_btn cs_style_1 cs_fs_18 cs_semibold cs_white_bg cs_radius_100">
-                <span class="cs_btn_text">Prendre un Rendez-vous</span>
-              </button>
+           <button type="button" id="rendezVousBtn" class="cs_btn cs_style_1 cs_fs_18 cs_semibold cs_white_bg cs_radius_100">
+  <span class="cs_btn_text">Prendre un Rendez-vous</span>
+</button>
+
+<script>
+document.getElementById("rendezVousBtn").addEventListener("click", function() {
+    var numero = "212700917099"; // ton numéro WhatsApp
+
+    // Récupérer les valeurs du formulaire
+    var name = document.querySelector('input[name="name"]').value;
+    var phone = document.querySelector('input[name="phone"]').value;
+    var department = document.querySelector('select[name="department"]').value;
+    var date = document.querySelector('input[name="date"]').value;
+    var userMessage = document.querySelector('textarea[name="Message"]').value;
+
+    // Construire le message
+    var message = "Bonjour, je souhaite prendre un rendez-vous.\n" +
+                  "Nom: " + name + "\n" +
+                  "Téléphone: " + phone + "\n" +
+                  "Service: " + department + "\n" +
+                  "Date: " + date + "\n" +
+                  "Message: " + userMessage;
+
+    // Générer le lien WhatsApp
+    var url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(message);
+
+    // Ouvrir WhatsApp
+    window.open(url, "_blank");
+});
+</script>
+
             </div>
           </form>
         </div>
