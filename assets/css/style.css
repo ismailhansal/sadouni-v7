@@ -12206,7 +12206,7 @@ background-image: url("../img/myopia.jpg");
 }
 
 /* RESPONSIVE MOBILE */
-@media (max-width: 768px) {
+@media (m-width: 768px) {
   .cards-grid {
     grid-template-columns: 1fr; /* 1 carte par ligne */
   }
