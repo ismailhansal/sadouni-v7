@@ -919,11 +919,21 @@ Le Dr Choaib Sadouni propose des soins ophtalmologiques personnalisés, alliant 
       
       // Function to update navbar style
       function updateNavbar() {
-                const isDesktop = window.innerWidth > 1199; // desktop si écran > 1199px
+        const isDesktop = window.innerWidth > 1199; // desktop si écran > 1199px
+        const menuToggle = document.querySelector('.cs_menu_toggle');
+        
+        if (!isDesktop) {
+          // Mobile view - handle hamburger menu color
+          if (window.scrollY > 50 || header.classList.contains('menu-open')) {
+            menuToggle.style.color = '#000';
+          } else {
+            menuToggle.style.color = '#fff';
+          }
+          return;
+        }
 
-                if (!isDesktop) return; // si pas desktop, ne fait rien sur mobile        if (window.scrollY > 50 ) {
-
-                  if (window.scrollY > 50) {
+        // Desktop view
+        if (window.scrollY > 50) {
           // When scrolled
           header.classList.add('cs_scrolled');
           header.style.backgroundColor = '#fff';

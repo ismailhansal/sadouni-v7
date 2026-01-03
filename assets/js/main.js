@@ -588,4 +588,36 @@
       $(this).siblings().slideToggle();
     });
   }
+  colorPicker()
+
+  // Mobile hamburger menu scroll behavior
+  $(document).ready(function() {
+    const $header = $('.cs_site_header');
+    const $menuToggle = $('.cs_menu_toggle');
+    
+    function updateHamburgerColor() {
+      const isDesktop = window.innerWidth > 1199;
+      if (isDesktop) return; // Only apply to mobile
+      
+      if (window.scrollY > 50 || $header.hasClass('menu-open')) {
+        $menuToggle.css('color', '#000');
+      } else {
+        $menuToggle.css('color', '#fff');
+      }
+    }
+
+    // Run on load
+    updateHamburgerColor();
+    
+    // Run on scroll
+    $(window).on('scroll', updateHamburgerColor);
+    
+    // Also update when menu is toggled
+    if ($menuToggle.length) {
+      $menuToggle.on('click', function() {
+        // Small timeout to let the menu-open class be toggled first
+        setTimeout(updateHamburgerColor, 10);
+      });
+    }
+  });
 })(jQuery); // End of use strict

@@ -2555,6 +2555,7 @@ label {
 .cs_service_area {
   position: relative;
   z-index: 0;
+  background-color: white;
 }
 .cs_service_area::after {
   content: "";
@@ -2563,10 +2564,14 @@ label {
   position: absolute;
   top: 0;
   left: 0;
+
+  background-color: white;
+
 }
 .cs_service_area .container {
   position: relative;
   z-index: 1;
+  
 }
 .cs_service_area .cs_card_thumbnail img {
   width: 100%;
@@ -5194,6 +5199,14 @@ a.ui-button:active,
     top: 27px;
     right: 30px;
     color: #fff;
+    transition: color 0.3s ease;
+    z-index: 1001;
+  }
+  
+  /* Make sure the close icon is black when menu is open */
+  .menu-open .cs_menu_toggle,
+  .cs_menu_toggle.cs_toggle_active {
+    color: #000 !important;
   }
   .cs_menu_toggle span,
   .cs_menu_toggle span:before,
@@ -5255,6 +5268,13 @@ a.ui-button:active,
     background-color: rgba(0, 0, 0, 0);
     -webkit-transition-delay: 0.2s;
             transition-delay: 0.2s;
+  }
+  
+  /* Ensure the hamburger menu is visible on mobile */
+  @media (max-width: 1199px) {
+    .cs_menu_toggle {
+      display: block !important;
+    }
   }
   .cs_toggle_active span:before {
     margin-top: 0;
@@ -12087,6 +12107,7 @@ body {
 /* Section */
 .specialites {
   padding-top: 40px;
+  
   
 }
 

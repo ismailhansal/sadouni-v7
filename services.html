@@ -56,6 +56,15 @@
       margin: 0;
       line-height: 1.6;
     }
+    /* Make sure the close icon is black when menu is open */
+    .menu-open .cs_menu_toggle,
+    .cs_menu_toggle.cs_toggle_active {
+      color: #000 !important;
+    }
+    /* Ensure smooth transition for hamburger icon */
+    .cs_menu_toggle {
+      transition: color 0.3s ease;
+    }
   </style>
 </head>
 
@@ -214,7 +223,7 @@
   <!-- End Service Section -->
   <!-- Start Appointment Section -->
 <section>
-  <div class="cs_height_120 cs_height_lg_80 "></div>
+  <div  class="cs_height_120 cs_height_lg_80 "></div>
   <div class="container">
     <div class="row cs_gap_y_40">
       <div class="col-lg-6">
@@ -465,7 +474,7 @@ Casablanca • Maroc
     <div class="cs_footer_bottom cs_white_color">
       <div class="container">
         <div class="cs_footer_bottom_in">
-          <p class="cs_copyright mb-0">Dr. Choaib Sadouni© 2025. All Rights Reserved.</p>
+          <p class="cs_copyright mb-0">Dr. Choaib Sadouni  2025. All Rights Reserved.</p>
           <ul class="cs_footer_widget_menu">
             <li><a href="#">Politique de Confidentialité &amp; Cookies</a></li>
           </ul>
@@ -505,14 +514,24 @@ Casablanca • Maroc
       const submenuLinks = document.querySelectorAll('.cs_nav_list .sub-menu a');
       const logoWhite = document.querySelector('.cs_logo_white');
       const logoDark = document.querySelector('.cs_logo_dark');
+      const menuToggle = document.querySelector('.cs_menu_toggle');
       
       // Function to update navbar style
       function updateNavbar() {
-                const isDesktop = window.innerWidth > 1199; // desktop si écran > 1199px
+        const isDesktop = window.innerWidth > 1199; // desktop si écran > 1199px
+        
+        if (!isDesktop) {
+          // Mobile view - handle hamburger menu color
+          if (window.scrollY > 50 || header.classList.contains('menu-open')) {
+            menuToggle.style.color = '#000';
+          } else {
+            menuToggle.style.color = '#fff';
+          }
+          return;
+        }
 
-                if (!isDesktop) return; // si pas desktop, ne fait rien sur mobile        if (window.scrollY > 50 ) {
-
-                  if (window.scrollY > 50) {
+        // Desktop view
+        if (window.scrollY > 50) {
           // When scrolled
           header.classList.add('cs_scrolled');
           header.style.backgroundColor = '#fff';
