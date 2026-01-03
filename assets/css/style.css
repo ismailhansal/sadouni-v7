@@ -12215,6 +12215,17 @@ background-image: url("../img/myopia.jpg");
     margin-bottom: 80px;
   }
 
+
+
+    .cataracte-img2 {
+    height: 320px;
+    object-fit: cover;
+    margin-bottom: 80px;
+  }
+
+
+  
+
   /* afficher seulement 4 cartes */
   .property-card:nth-child(n+5) {
     display: none;
