@@ -12248,7 +12248,11 @@ background-image: url("../img/myopia.jpg");
     margin-top: 0 !important;    
     margin-bottom: 50px !important;   /* petit espace à gauche */
 
+
+
   }
+
+  
 
 
   
@@ -12257,6 +12261,11 @@ background-image: url("../img/myopia.jpg");
   .property-card:nth-child(n+5) {
     display: none;
   }
+
+
+    /* afficher seulement 4 cartes */
+
+
 }
 
 .gold_color{
