@@ -2255,6 +2255,8 @@ label {
   .cs_features.cs_style_1 {
     margin-top: -85px;
   }
+  
+
 }
 
 .cs_features_thumbnail {
@@ -2617,6 +2619,7 @@ label {
   .cs_service_grid.cs_style_1 {
     gap: 40px;
   }
+  
 }
 
 .cs_service_grid.cs_style_2 {
@@ -3732,6 +3735,8 @@ a.ui-button:active,
             justify-content: center;
   }
 }
+
+
 .cs_slider_arrows.cs_style_1 .cs_left_arrow,
 .cs_slider_arrows.cs_style_1 .cs_right_arrow {
   height: 50px;
@@ -3838,6 +3843,7 @@ a.ui-button:active,
             justify-content: center;
     gap: 20px;
   }
+  
 }
 @media (max-width: 991px) {
   .cs_slider_arrows.cs_style_3.cs_type_1 {
@@ -6004,7 +6010,7 @@ a.ui-button:active,
 
 
 .cs_about.cs_style_1.cs_wesh{
-     margin-top: 150px; 
+     margin-top: 80px; 
   position: relative; 
 }
 
@@ -12070,8 +12076,11 @@ Pricing controller
 display: none;
 
 }
-}
 
+
+
+
+}
 @media (min-width:1440px) {  
 
   .cs_hero_info_box_mobile {
@@ -12121,6 +12130,7 @@ body {
   max-width: 1100px;
   margin: 0 auto;
   margin-top: 110px;
+  margin-bottom: 110px;
 }
 
 /* CARD */
@@ -12209,6 +12219,7 @@ background-image: url("../img/myopia.jpg");
 @media (max-width: 768px) {
   .cards-grid {
     grid-template-columns: 1fr; /* 1 carte par ligne */
+    margin-bottom: 40px;
   }
 
    .cataracte-img {
@@ -12223,6 +12234,18 @@ background-image: url("../img/myopia.jpg");
     height: 320px;
     object-fit: cover;
     margin-bottom: 120px;
+  }
+  
+  
+  .cs_spe_mobile{
+    display: inline-block !important;
+    width: auto !important;
+      max-width: 100%;                  /* ne dépasse pas le container */
+    margin: 0 !important;    
+    margin-left: 12px !important;  
+    margin-top: 0 !important;    
+    margin-bottom: 50px !important;   /* petit espace à gauche */
+
   }
 
 

@@ -304,21 +304,21 @@ Dr Choaib Sadouni vous accompagne avec expertise dans la chirurgie de la catarac
 Cabinet de Soins Oculaires du <span class="cs_accent_color">Dr Choaib Sadouni</span>
 </h2>
 </div>
-<p class="cs_about_text">
-Le Dr Choaib Sadouni propose des soins ophtalmologiques personnalisés, alliant expertise et technologies de pointe. Son objectif : préserver et améliorer votre vision avec des traitements sûrs et un suivi attentif.
-</p>
-<ul class="cs_list cs_style_3 cs_fs_18 cs_semibold cs_heading_color cs_mp0">
-  <li><i class="fa-solid fa-check"></i><span>Médecin Certifié et Expérimenté</span></li>
-  <li><i class="fa-solid fa-check"></i><span>Accompagnement Patient Attentionné</span></li>
-  <li><i class="fa-solid fa-check"></i><span>Équipements et Technologies de Dernière Génération</span></li>
-  <li><i class="fa-solid fa-check"></i><span>Soins Personnalisés et de Qualité</span></li>
-  <li><i class="fa-solid fa-check"></i><span>Sécurité et Fiabilité des Traitements</span></li>
-  <li><i class="fa-solid fa-check"></i><span>Suivi Individualisé pour Chaque Patient</span></li>
-</ul>
+      <p class="cs_about_text">
+      Le Dr Choaib Sadouni propose des soins ophtalmologiques personnalisés, alliant expertise et technologies de pointe. Son objectif : préserver et améliorer votre vision avec des traitements sûrs et un suivi attentif.
+      </p>
+      <ul class="cs_list cs_style_3 cs_fs_18 cs_semibold cs_heading_color cs_mp0">
+        <li><i class="fa-solid fa-check"></i><span>Médecin Certifié et Expérimenté</span></li>
+        <li><i class="fa-solid fa-check"></i><span>Accompagnement Patient Attentionné</span></li>
+        <li><i class="fa-solid fa-check"></i><span>Équipements et Technologies de Dernière Génération</span></li>
+        <li><i class="fa-solid fa-check"></i><span>Soins Personnalisés et de Qualité</span></li>
+        <li><i class="fa-solid fa-check"></i><span>Sécurité et Fiabilité des Traitements</span></li>
+        <li><i class="fa-solid fa-check"></i><span>Suivi Individualisé pour Chaque Patient</span></li>
+      </ul>
 
             <a href="about.html" class="cs_btn cs_style_1 cs_fs_18 cs_semibold cs_accent_bg  cs_radius_100"><span
                 class="cs_btn_text">En Savoir Plus</span></a>
-          </div>
+</div>
         </div>
       </div>
     </div>
@@ -339,7 +339,8 @@ Le Dr Choaib Sadouni propose des soins ophtalmologiques personnalisés, alliant 
         <br>
         <h2 class="cs_style_3 cs_fs_24 cs_semibold mb-0"> <span class="gold_color">DR. Choiab Sadouni</span> allie expertise et technologies pour traiter toutes les pathologies oculaires</h2>
       </div>
-  <div class="cards-grid cs_padding_bottom4">
+  <div class="cards-grid 
+  ">
 
     <div class="property-card wow fadeInUp">
       <a href="cataracte.html">
@@ -389,9 +390,14 @@ Le Dr Choaib Sadouni propose des soins ophtalmologiques personnalisés, alliant 
         <p>Prise en charge de la myopie par lunettes, lentilles ou chirurgie.</p>
       </div></a>
     </div>
+    
+    
+  
 
+  </div>    <a style="display: none;"   href="services.html" class="cs_btn cs_style_1 cs_spe_mobile cs_fs_18 cs_semibold cs_accent_bg  cs_radius_100"><span
+                class="cs_btn_text">Voir Toutes nos Spécialités</span></a>
   </div>
-  </div>
+
 
 
 </section>
@@ -823,7 +829,7 @@ Le Dr Choaib Sadouni propose des soins ophtalmologiques personnalisés, alliant 
           <div class="cs_footer_widget">
             <div class="cs_footer_text_widget">
               <img style="width: 200px;" src="assets/img/sadouni-logo-dark.svg" alt="Logo">
-              <p>Far far away, behind the word bore et dolore magna aliqua. Ut enim ad on minim veniam, quis nostrud</p>
+              <p>Cabinet d’ophtalmologie du Dr Sadouni – Soins et suivi de la vision.</p>
             </div>
             <div class="cs_social_btns cs_style_1">
               <a href="#" class="cs_center">
@@ -875,12 +881,15 @@ Le Dr Choaib Sadouni propose des soins ophtalmologiques personnalisés, alliant 
     </div>
     <div class="cs_footer_bottom cs_white_color">
       <div class="container">
-        <div class="cs_footer_bottom_in">
-          <p class="cs_copyright mb-0">Dr. Choaib Sadouni© 2025. All Rights Reserved.</p>
-          <ul class="cs_footer_widget_menu">
-            <li><a href="#">Politique de Confidentialité &amp; Cookies</a></li>
-          </ul>
-        </div>
+       <div class="cs_footer_bottom_in">
+  <p class="cs_copyright mb-0">
+    Dr. Choaib Sadouni © <span id="currentYear"></span>. All Rights Reserved.
+  </p>
+  <ul class="cs_footer_widget_menu">
+    <li><a href="#">Politique de Confidentialité &amp; Cookies</a></li>
+  </ul>
+</div>
+
       </div>
     </div>
   </footer>
@@ -1018,6 +1027,10 @@ const navLinks = document.querySelectorAll('.cs_nav_list > li > a, .cs_header_nu
 
 
   </script>
+  <script>
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
+
 </body>
 
 </html>

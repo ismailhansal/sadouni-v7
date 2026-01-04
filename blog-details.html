@@ -206,7 +206,7 @@
           <div class="cs_footer_widget">
             <div class="cs_footer_text_widget">
               <img style="width: 200px;" src="assets/img/sadouni-logo-dark.svg" alt="Logo">
-              <p>Far far away, behind the word bore et dolore magna aliqua. Ut enim ad on minim veniam, quis nostrud</p>
+              <p>Cabinet d’ophtalmologie du Dr Sadouni – Soins et suivi de la vision.</p>
             </div>
             <div class="cs_social_btns cs_style_1">
               <a href="#" class="cs_center">
@@ -258,12 +258,14 @@
     </div>
     <div class="cs_footer_bottom cs_white_color">
       <div class="container">
-        <div class="cs_footer_bottom_in">
-          <p class="cs_copyright mb-0">Dr. Choaib Sadouni© 2025. All Rights Reserved.</p>
-          <ul class="cs_footer_widget_menu">
-            <li><a href="#">Politique de Confidentialité &amp; Cookies</a></li>
-          </ul>
-        </div>
+               <div class="cs_footer_bottom_in">
+  <p class="cs_copyright mb-0">
+    Dr. Choaib Sadouni © <span id="currentYear"></span>. All Rights Reserved.
+  </p>
+  <ul class="cs_footer_widget_menu">
+    <li><a href="#">Politique de Confidentialité &amp; Cookies</a></li>
+  </ul>
+</div>
       </div>
     </div>
   </footer>
@@ -391,5 +393,8 @@ const navLinks = document.querySelectorAll('.cs_nav_list > li > a, .cs_header_nu
 
   </script>
 </body>
+  <script>
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
 
 </html>
