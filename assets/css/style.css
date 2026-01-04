@@ -328,8 +328,8 @@ textarea {
   left: 0;
   width: 100%;
   overflow: hidden;
-  -webkit-animation: spark 0.25s linear infinite;
-          animation: spark 0.25s linear infinite;
+  -webkit-animation: spark 0.70s linear infinite;
+          animation: spark 0.70s linear infinite;
 }
 .cs_preloader .cs_wave_second svg {
   fill: var(--gold-color);
